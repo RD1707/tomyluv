@@ -74,7 +74,7 @@ public partial class GameMenu : CanvasLayer
 		startButton.FocusNeighborTop = quitButton.GetPath();
 		quitButton.FocusNeighborBottom = startButton.GetPath();
 		aboutButton.Pressed += () => {
-			OS.ShellOpen("https://github.com/Ark2000/world_of_alpheratz");
+			OS.ShellOpen("https://github.com/RD1707/tomyluv");
 		};
 		
 		resetKeysButton.Pressed += () => {

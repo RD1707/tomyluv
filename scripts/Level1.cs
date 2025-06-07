@@ -55,9 +55,6 @@ public partial class Level1 : Node2D
             Callable.From(onSecreteAreaFound)
         );
 
-        // Bug: https://github.com/godotengine/godot/issues/70414
-        // Use Connect instead of += for now, do not use lambda also
-        // GameWorld.Instance.PlayerHurt += OnPlayerHurt;
         GameWorld.Instance.Connect(
             nameof(GameWorld.SignalName.PlayerHurt), 
             Callable.From(OnPlayerHurt)
@@ -70,7 +67,7 @@ public partial class Level1 : Node2D
             if (!leftAreaFirstTime)
             {
                 leftAreaFirstTime = true;
-                player.chatBubble.PlayText("Did I forget something\nat home?");
+                player.chatBubble.PlayText("Será que eu esqueci algo\nem casa?");
             }
         };
 
@@ -78,8 +75,6 @@ public partial class Level1 : Node2D
             cam.LimitLeft += 1000;
         };
 
-        // One-shot event handler
-        // if observer and listener share the same lifespan, += is ok
         InteractiveMessage.MessageActivatedEventHandler onRest = null;
         onRest = () => {
             GD.Print("[INFO] REST");
@@ -100,7 +95,6 @@ public partial class Level1 : Node2D
             hud.remainTime.SetNumber(timeRemain);
             if (timeRemain <= 0)
             {
-                // What will happen if time is running out? Here's the answer...
                 GameWorld.Instance.ChangeScene("res://scenes/rest_scene.tscn");
             }
         })).SetDelay(1.0f);
@@ -110,7 +104,7 @@ public partial class Level1 : Node2D
         };
 
         CreateTween().TweenCallback(Callable.From(() => {
-            player.chatBubble.PlayText("I have to hurry up!\nTwiggy is waiting for me.");
+            player.chatBubble.PlayText("Eu tenho que ir logo!\nmeu namorado está me esperando!");
         })).SetDelay(2.0f);
 
         SetupNPC2();
@@ -131,14 +125,12 @@ public partial class Level1 : Node2D
         }
     }
 
-    // It's awesome that you can write the entire npc logic in one function in c#.
     private void SetupNPC2()
     {
         int npc2Moves = 0;
         string npc2State = "idle";
 
         npc2_Dialogue.BodyEntered += (Node2D body) => {
-            // Grab camera focus
             cam.target = npc2;
             npc2.SetMeta("Zoom", Vector2.One * 3.5f);
 
@@ -157,22 +149,22 @@ public partial class Level1 : Node2D
             cutsceneMode.CutsceneSkipped += onCutsceneSkipped;
 
             tween.TweenCallback(Callable.From(() => {
-                npc2.chatBubble.PlayText("Good moring, Leia! ^_^");
+                npc2.chatBubble.PlayText("Bom dia, Manu! ^_^");
             })).SetDelay(0.5f);
             tween.TweenCallback(Callable.From(() => {
-                npc2.chatBubble.PlayText("Are you going on your adventure again?");
+                npc2.chatBubble.PlayText("Voce está indo em direcao a aventuda de novo?");
             })).SetDelay(2.0f);
             tween.TweenCallback(Callable.From(() => {
-                npc2.chatBubble.PlayText("I hope to go with you.");
+                npc2.chatBubble.PlayText("Eu posso te acompanhar.");
             })).SetDelay(2.0f);
             tween.TweenCallback(Callable.From(() => {
-                npc2.chatBubble.PlayText("but I'm a little scared of the grumpy\ncreatures ahead... :(");
+                npc2.chatBubble.PlayText("mas eu estou um pouco assustado com as\ncriaturas... :(");
             })).SetDelay(2.0f);
             tween.TweenCallback(Callable.From(() => {
-                npc2.chatBubble.PlayText("Wish you good luck! ^ ^");
+                npc2.chatBubble.PlayText("Mudando de assunto, boa sorte! ^ ^");
             })).SetDelay(2.8f);
             tween.TweenCallback(Callable.From(() => {
-                player.chatBubble.PlayText("Thank you, Mr. Mochi.\nHave a nice day!");
+                player.chatBubble.PlayText("Obrigado, Mr. Mochi.\nTenha um bom dia!");
             })).SetDelay(2.0f);
             tween.TweenCallback(Callable.From(() => {
                 npc2State = "idle";
@@ -225,27 +217,27 @@ public partial class Level1 : Node2D
             npc3_Dialogue = null;
             Tween tween = CreateTween();
             tween.TweenCallback(Callable.From(() => {
-                npc3.chatBubble.PlayText("Hi, Leia! ^_^");
+                npc3.chatBubble.PlayText("Oi, Manu! ^_^");
             })).SetDelay(0.5f);
             tween.TweenCallback(Callable.From(() => {
-                npc3.chatBubble.PlayText("I've been waiting here for so long.");
+                npc3.chatBubble.PlayText("Eu te esperei por tanto tempo!");
             })).SetDelay(2.0f);
             tween.TweenCallback(Callable.From(() => {
-                npc3.chatBubble.PlayText("Finally you're here! Let's go!");
+                npc3.chatBubble.PlayText("Finalmente, você chegou!");
             })).SetDelay(2.0f);
             if (secreteAreaFoundCounter == 6)
             {
                 tween.TweenCallback(Callable.From(() => {
-                    npc3.chatBubble.PlayText("Wow, you found all the secret areas!");
+                    npc3.chatBubble.PlayText("wow, voce encontrou todas as areas secretas!");
                 })).SetDelay(2.0f);
                 tween.TweenCallback(Callable.From(() => {
                     npc3.emoBubble.PlayEmo(2);
                 })).SetDelay(2.0f);
                 tween.TweenCallback(Callable.From(() => {
-                    npc3.chatBubble.PlayText("I'm so proud of you! ^_^");
+                    npc3.chatBubble.PlayText("Estou orgulhoso de voce! ^_^");
                 })).SetDelay(2.0f);
                 tween.TweenCallback(Callable.From(() => {
-                    player.chatBubble.PlayText("Well, I'm just lucky.");
+                    player.chatBubble.PlayText("Que nada, foi apenas sorte!");
                 })).SetDelay(2.0f);
             }
             tween.TweenCallback(Callable.From(() => {
@@ -273,7 +265,7 @@ public partial class Level1 : Node2D
 
     private void onSecreteAreaFound()
     {
-        GD.Print("Secret area found!");
+        GD.Print("Area secreta encontrada!");
         GameWorld.Instance.PlaySFX("res://sounds/sfx_sounds_fanfare1.wav");
         player.emoBubble.PlayEmo(2);
         secreteAreaFoundCounter += 1;

@@ -18,7 +18,7 @@ public partial class RemapButton : Button
 	{
 		// Read the key from config file
 		Key key = (Key)(long)GameWorld.Instance.configFile.GetValue(GameWorld.ConfigSection_Keybindings, inputAction);
-		Text = "Key " + OS.GetKeycodeString(key);
+		Text = "Tecla " + OS.GetKeycodeString(key);
 
 	}
 
@@ -26,7 +26,7 @@ public partial class RemapButton : Button
 	{
 		InputEventKey keyEvent = @event as InputEventKey;
 		ButtonPressed = false;
-		Text = "Key " + OS.GetKeycodeString(keyEvent.Keycode);
+		Text = "Tecla " + OS.GetKeycodeString(keyEvent.Keycode);
 		GameWorld.Instance.RemapKey(inputAction, keyEvent.Keycode);
 	}
 
@@ -35,7 +35,7 @@ public partial class RemapButton : Button
 		SetProcessUnhandledKeyInput(buttonPressed);
 		if (buttonPressed)
 		{
-			Text = "Press a key";
+			Text = "Aperta a tecla...";
 		}
 		else 
 		{

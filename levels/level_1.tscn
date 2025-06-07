@@ -1067,7 +1067,7 @@ offset_right = -19.0
 offset_bottom = 13.0
 grow_horizontal = 0
 grow_vertical = 2
-text = "Skip(E)"
+text = "Pular(E)"
 label_settings = SubResource("LabelSettings_qon62")
 
 [editable path="NPC2"]

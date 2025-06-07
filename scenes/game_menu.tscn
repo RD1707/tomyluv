@@ -98,20 +98,20 @@ layout_mode = 2
 
 [node name="Button" parent="TopMenu/NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource("3_axtap")]
 layout_mode = 2
-text = "New Journey"
+text = "Nova Jornada"
 
 [node name="Button2" parent="TopMenu/NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource("3_axtap")]
 layout_mode = 2
-text = "Game Settings"
+text = "Config."
 
 [node name="Button3" parent="TopMenu/NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource("3_axtap")]
 layout_mode = 2
-text = "Source Code"
+text = "GitHub"
 icon = ExtResource("4_bns63")
 
 [node name="Button4" parent="TopMenu/NinePatchRect/MarginContainer/VBoxContainer" instance=ExtResource("3_axtap")]
 layout_mode = 2
-text = "Quit Game"
+text = "Sair do Jogo"
 
 [node name="Settings" type="Control" parent="."]
 visible = false

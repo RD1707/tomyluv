@@ -6,8 +6,6 @@ public partial class TitleScene : Control
 	PlatformerPlayer player;
 	[Export]
 	GameMenu menu;
-	[Export]
-	Control logo;
 
 	public override void _Ready()
 	{

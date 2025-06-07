@@ -45,9 +45,9 @@ public partial class GameMenu : CanvasLayer
 	private readonly Stack<Control> menuStack = new();
 	private Control currentMenu;
 
-    public override void _Ready()
-    {
-        base._Ready();
+	public override void _Ready()
+	{
+		base._Ready();
 
 		// It's better to set up everything in script instead of in editor.
 		seVolumeSlider.MinValue = 0.0f;
@@ -88,7 +88,7 @@ public partial class GameMenu : CanvasLayer
 		};
 		seVolumeSlider.ValueChanged += (double value) => {
 			GameWorld.Instance.configFile.SetValue(GameWorld.ConfigSection_Misc, GameWorld.Misc_SE, value);
-        	AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("SFX"), Mathf.LinearToDb((float)value));
+			AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("SFX"), Mathf.LinearToDb((float)value));
 		};
 		bgmVolumeSlider.ValueChanged += (double value) => {
 			GameWorld.Instance.configFile.SetValue(GameWorld.ConfigSection_Misc, GameWorld.Misc_BGM, value);
@@ -114,7 +114,7 @@ public partial class GameMenu : CanvasLayer
 			ShowMenu(topMenu);
 		}
 		background.Visible = pauseMenuMode;
-    }
+	}
 
 	public void HideAll()
 	{

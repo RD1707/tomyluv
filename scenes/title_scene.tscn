@@ -73,7 +73,7 @@ _data = {
 "title": SubResource("Animation_f4x8u")
 }
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_r5n76"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_l7vjc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jydb5"]
 font = ExtResource("8_3ft3o")
@@ -125,8 +125,8 @@ texture = ExtResource("2_einia")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -287.995
-offset_bottom = -438.0
+offset_right = 576.005
+offset_bottom = 186.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -206,7 +206,7 @@ zoom = Vector2(4, 4)
 
 [node name="GameMenu" parent="." instance=ExtResource("1_kv5vj")]
 layer = 0
-windowScaleButtons = SubResource("ButtonGroup_r5n76")
+windowScaleButtons = SubResource("ButtonGroup_l7vjc")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 

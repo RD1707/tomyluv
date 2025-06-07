@@ -104,7 +104,7 @@ public partial class Level1 : Node2D
 		};
 
 		CreateTween().TweenCallback(Callable.From(() => {
-			player.chatBubble.PlayText("Eu tenho que ir logo!\nmeu namorado está me esperando!");
+			player.chatBubble.PlayText("Eu tenho que ir logo!\nminha amiga está me esperando!");
 		})).SetDelay(2.0f);
 
 		SetupNPC2();

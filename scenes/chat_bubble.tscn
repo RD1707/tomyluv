@@ -18,7 +18,6 @@ font_color = Color(0, 0, 0, 1)
 [node name="ChatBubble" type="Label" node_paths=PackedStringArray("handle")]
 texture_filter = 1
 custom_minimum_size = Vector2(16, 0)
-anchors_preset = -1
 offset_left = -7.0
 offset_top = -14.0
 offset_right = 134.0

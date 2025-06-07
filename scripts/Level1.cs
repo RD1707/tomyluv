@@ -104,7 +104,7 @@ public partial class Level1 : Node2D
 		};
 
 		CreateTween().TweenCallback(Callable.From(() => {
-			player.chatBubble.PlayText("Eu tenho que ir logo!\nminha amiga está me esperando!");
+			player.chatBubble.PlayText("Eu tenho que ir logo!\nmeu namorado esta me esperando!");
 		})).SetDelay(2.0f);
 
 		SetupNPC2();
@@ -152,16 +152,13 @@ public partial class Level1 : Node2D
 				npc2.chatBubble.PlayText("Bom dia, Manu! ^_^");
 			})).SetDelay(0.5f);
 			tween.TweenCallback(Callable.From(() => {
-				npc2.chatBubble.PlayText("Voce está indo em direcao a aventuda de novo?");
+				npc2.chatBubble.PlayText("Voce esta indo em direcao a aventura de novo?");
 			})).SetDelay(2.0f);
 			tween.TweenCallback(Callable.From(() => {
 				npc2.chatBubble.PlayText("Eu posso te acompanhar.");
 			})).SetDelay(2.0f);
 			tween.TweenCallback(Callable.From(() => {
-				npc2.chatBubble.PlayText("mas eu estou um pouco assustado com as\ncriaturas... :(");
-			})).SetDelay(2.0f);
-			tween.TweenCallback(Callable.From(() => {
-				npc2.chatBubble.PlayText("Mudando de assunto, boa sorte! ^ ^");
+				npc2.chatBubble.PlayText("Sim?? Boa sorte! ^ ^");
 			})).SetDelay(2.8f);
 			tween.TweenCallback(Callable.From(() => {
 				player.chatBubble.PlayText("Obrigado, Mr. Mochi.\nTenha um bom dia!");
@@ -217,13 +214,13 @@ public partial class Level1 : Node2D
 			npc3_Dialogue = null;
 			Tween tween = CreateTween();
 			tween.TweenCallback(Callable.From(() => {
-				npc3.chatBubble.PlayText("Oi, Manu! ^_^");
+				npc3.chatBubble.PlayText("Oi, amor! Eu te esperei por tanto tempo... ^_^");
 			})).SetDelay(0.5f);
 			tween.TweenCallback(Callable.From(() => {
-				npc3.chatBubble.PlayText("Eu te esperei por tanto tempo!");
+				npc3.chatBubble.PlayText("Estou preso nesse corpo agora e so voce pode me libertar!");
 			})).SetDelay(2.0f);
 			tween.TweenCallback(Callable.From(() => {
-				npc3.chatBubble.PlayText("Finalmente, você chegou!");
+				npc3.chatBubble.PlayText("Me segue e no caminho te conto o que aconteceu!");
 			})).SetDelay(2.0f);
 			if (secreteAreaFoundCounter == 6)
 			{

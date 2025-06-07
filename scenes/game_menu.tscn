@@ -203,7 +203,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-text = "Menu Opacity"
+text = "Opacidade "
 label_settings = SubResource("LabelSettings_77pv6")
 
 [node name="HSlider3" parent="Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("5_j40k5")]
@@ -218,7 +218,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-text = "Window Scale"
+text = "Escala da Janela"
 label_settings = SubResource("LabelSettings_77pv6")
 
 [node name="1" type="CheckBox" parent="Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer4"]
@@ -253,21 +253,21 @@ text = "3x"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_mpeam")
 theme_override_font_sizes/font_size = 24
-text = "Reset Above"
+text = "Resetar"
 flat = true
 
 [node name="Button2" type="Button" parent="Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_mpeam")
 theme_override_font_sizes/font_size = 24
-text = "Keyboard Config"
+text = "Config. Teclado"
 flat = true
 
 [node name="Button3" type="Button" parent="Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_mpeam")
 theme_override_font_sizes/font_size = 24
-text = "Back"
+text = "Voltar"
 flat = true
 
 [node name="KeyConfig" type="Control" parent="."]
@@ -289,7 +289,7 @@ grow_vertical = 2
 layout_mode = 1
 offset_right = 322.0
 offset_bottom = 29.0
-text = "Key Config"
+text = "Config. Teclado"
 label_settings = SubResource("LabelSettings_apn8j")
 
 [node name="Panel" type="PanelContainer" parent="KeyConfig"]

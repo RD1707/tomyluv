@@ -66,8 +66,8 @@ offset_right = 87.0
 offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "- LEVEL 1 -
-SURBURB
+text = "- NIVEL 1 -
+O INICIO
 "
 label_settings = SubResource("LabelSettings_hxh7m")
 horizontal_alignment = 1

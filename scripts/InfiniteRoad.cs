@@ -6,14 +6,14 @@ public partial class InfiniteRoad : Node2D
 {
 
 	[Export]
-    public int chunkSize = 1008;
+	public int chunkSize = 1008;
 	[Export]
 	public Node2D chunkProto;
-    private readonly Dictionary<int, Node> loadedChunks = new();
+	private readonly Dictionary<int, Node> loadedChunks = new();
 
-    public override void _Ready()
-    {
-        base._Ready();
+	public override void _Ready()
+	{
+		base._Ready();
 
 		CreateTween().SetLoops().TweenCallback(Callable.From(() => {
 			Camera2D cam = GetViewport().GetCamera2D();
@@ -24,49 +24,49 @@ public partial class InfiniteRoad : Node2D
 			UpdateChunks((int) left, (int) right);
 			// GD.Print(left, " ", right);
 		})).SetDelay(0.2f);
-    }
+	}
 
-    public Node LoadChunk(int chunkId)
-    {
+	public Node LoadChunk(int chunkId)
+	{
 		GD.Print("Load ", chunkId);
-        Node2D newChunk = (Node2D) chunkProto.Duplicate();
+		Node2D newChunk = (Node2D) chunkProto.Duplicate();
 		chunkProto.GetParent().AddChild(newChunk);
 		newChunk.Position = new Vector2(chunkId * chunkSize, 0);
 		newChunk.Show();
 		return newChunk;
-    }
+	}
 
-    public void UnloadChunk(int chunkId)
-    {
+	public void UnloadChunk(int chunkId)
+	{
 		GD.Print("Unload ", chunkId);
-        Node2D unwantedChunk = (Node2D) loadedChunks[chunkId];
+		Node2D unwantedChunk = (Node2D) loadedChunks[chunkId];
 		unwantedChunk.QueueFree();
-    }
+	}
 
-    public void UpdateChunks(int left, int right)
-    {
-        int leftId = left / chunkSize;
-        int rightId = right / chunkSize;
+	public void UpdateChunks(int left, int right)
+	{
+		int leftId = left / chunkSize;
+		int rightId = right / chunkSize;
 
-        // Load new chunks
-        for (int i = leftId; i <= rightId; i++)
-        {
-            if (!loadedChunks.ContainsKey(i))
-            {
-                LoadChunk(i);
-                loadedChunks.Add(i, LoadChunk(i));
-            }
-        }
+		// Load new chunks
+		for (int i = leftId; i <= rightId; i++)
+		{
+			if (!loadedChunks.ContainsKey(i))
+			{
+				LoadChunk(i);
+				loadedChunks.Add(i, LoadChunk(i));
+			}
+		}
 
-        // Unload unwanted chunks
-        List<int> ids = new(loadedChunks.Keys);
-        for (int i = 0; i < ids.Count; i++)
-        {
-            if (ids[i] < leftId || ids[i] > rightId)
-            {
-                UnloadChunk(ids[i]);
-                loadedChunks.Remove(ids[i]);
-            }
-        }
-    }
+		// Unload unwanted chunks
+		List<int> ids = new(loadedChunks.Keys);
+		for (int i = 0; i < ids.Count; i++)
+		{
+			if (ids[i] < leftId || ids[i] > rightId)
+			{
+				UnloadChunk(ids[i]);
+				loadedChunks.Remove(ids[i]);
+			}
+		}
+	}
 }

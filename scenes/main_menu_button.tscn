@@ -32,4 +32,4 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_dqker")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vi0e8")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_qosqq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_jn0y2")
-text = "Start"
+text = "Comecar"

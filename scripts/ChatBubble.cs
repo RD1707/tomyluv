@@ -20,10 +20,10 @@ public partial class ChatBubble : Label
 		// bug report: https://github.com/godotengine/godot/issues/76668
 		GrowVertical = GrowDirection.Begin;
 
-        if (HasNode("/root/Console"))
-        {
-            GetNode("/root/Console").Call("register_env", Name + GetInstanceId(), this);
-        }
+		if (HasNode("/root/Console"))
+		{
+			GetNode("/root/Console").Call("register_env", Name + GetInstanceId(), this);
+		}
 	}
 
 	public override void _PhysicsProcess(double delta)

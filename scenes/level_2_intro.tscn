@@ -65,8 +65,8 @@ offset_right = 87.0
 offset_bottom = 175.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "- LEVEL 2 -
-SEASHORE
+text = "- NIVEL 2 -
+A COMPLETAR
 "
 label_settings = SubResource("LabelSettings_qhc5n")
 horizontal_alignment = 1
